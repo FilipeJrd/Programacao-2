@@ -2,6 +2,12 @@ package main;
 
 import java.util.Scanner;
 
+import org.bson.Document;
+
+import data.DBInstance;
+import com.mongodb.*;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 public class Main {
 
 	public static void main(String[] args) {

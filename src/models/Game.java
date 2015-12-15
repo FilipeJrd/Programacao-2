@@ -1,11 +1,11 @@
 package models;
-
 public class Game {
 	private String winner;
 	private Team radiant;
 	private Team dire;
 	private TeamGameStatistics radiantStats;
 	private TeamGameStatistics direStats;
+	
 	
 	public Game(String winner, Team radiant, Team dire, TeamGameStatistics radiantStats, TeamGameStatistics direStats) {
 		this.winner = winner;
