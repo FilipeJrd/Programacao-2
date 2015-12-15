@@ -9,7 +9,6 @@ public class Team {
 	
 	
 	public Team(String name, String country, List<Player> players) {
-		super();
 		this.name = name;
 		this.country = country;
 		this.players = players;

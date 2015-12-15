@@ -17,7 +17,6 @@ public class TeamGameStatistics {
 	
 	public TeamGameStatistics(int gold, int kills, int towersDestroyed, int barracksDestroyed, int roshanKills,
 			int aegis, Map<Hero, Player> picks, List<Hero> bans) {
-		super();
 		this.gold = gold;
 		this.kills = kills;
 		this.towersDestroyed = towersDestroyed;

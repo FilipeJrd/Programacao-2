@@ -8,7 +8,6 @@ public class Tournament {
 	private List<Game> games;
 	
 	public Tournament(String name, List<Team> teams, List<Game> games) {
-		super();
 		this.name = name;
 		this.teams = teams;
 		this.games = games;

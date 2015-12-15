@@ -8,7 +8,6 @@ public class Game {
 	private TeamGameStatistics direStats;
 	
 	public Game(String winner, Team radiant, Team dire, TeamGameStatistics radiantStats, TeamGameStatistics direStats) {
-		super();
 		this.winner = winner;
 		this.radiant = radiant;
 		this.dire = dire;

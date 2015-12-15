@@ -15,7 +15,6 @@ public class Player {
 
 	public Player(String name, String nickname, Position position, int kills, int deaths, int assists, int age,
 			String country) {
-		super();
 		this.name = name;
 		this.nickname = nickname;
 		this.position = position;
