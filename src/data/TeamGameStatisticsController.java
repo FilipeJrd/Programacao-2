@@ -24,4 +24,17 @@ public class TeamGameStatisticsController implements IController<TeamGameStatist
 		return doc;
 	}
 
+	@Override
+	public TeamGameStatistics convertToObject(Document doc) {
+		return new TeamGameStatistics(
+				(int)doc.get("gold"),
+				(int)doc.get("kills"),
+				(int)doc.get("towers"),
+				(int)doc.get("barracks"),
+				(int)doc.get("roshan"),
+				(int)doc.get("aegis"),
+				(String)doc.get("picks"),
+			    (String)doc.get("bans"));
+	}
+
 }

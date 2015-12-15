@@ -19,14 +19,19 @@ public class GameController implements IController<Game>{
 		Game game = (Game) obj;
 		Document doc =  new Document();
 		doc.append("winner", game.getWinner());
-		doc.append("dire", game.getDire());
-		doc.append("radiant", game.getRadiant());
+		doc.append("dire", game.getDire().getName());
+		doc.append("radiant", game.getRadiant().getName());
 		
 		Document direStats = tgsController.convertToDocument(game.getDireStats());
 		Document radiantStats = tgsController.convertToDocument(game.getRadiantStats());
 		doc.append("direStats",direStats);
 		doc.append("radiantStats",radiantStats);
 		return doc;
+	}
+	@Override
+	public Game convertToObject(Document doc) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

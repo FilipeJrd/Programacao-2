@@ -12,11 +12,11 @@ public class TeamGameStatistics {
 	private int barracksDestroyed;
 	private int roshanKills;
 	private int aegis;
-	private Map<Hero, Player> picks;
-	private List<Hero> bans;
+	private String picks;
+	private String bans;
 	
 	public TeamGameStatistics(int gold, int kills, int towersDestroyed, int barracksDestroyed, int roshanKills,
-			int aegis, Map<Hero, Player> picks, List<Hero> bans) {
+			int aegis, String picks, String bans) {
 		this.gold = gold;
 		this.kills = kills;
 		this.towersDestroyed = towersDestroyed;
@@ -63,16 +63,16 @@ public class TeamGameStatistics {
 	public void setAegis(int aegis) {
 		this.aegis = aegis;
 	}
-	public Map<Hero, Player> getPicks() {
+	public String getPicks() {
 		return picks;
 	}
-	public void setPicks(Map<Hero, Player> picks) {
+	public void setPicks(String picks) {
 		this.picks = picks;
 	}
-	public List<Hero> getBans() {
+	public String getBans() {
 		return bans;
 	}
-	public void setBans(List<Hero> bans) {
+	public void setBans(String bans) {
 		this.bans = bans;
 	}
 	

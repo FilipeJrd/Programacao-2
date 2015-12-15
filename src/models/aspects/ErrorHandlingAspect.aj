@@ -12,7 +12,7 @@ public aspect ErrorHandlingAspect {
 		try {
 			proceed();
 		} catch(Exception e) {
-			System.out.println("Opção inválida!");
+			System.out.println(e);
 			Main.readInput();
 		}
 	}
