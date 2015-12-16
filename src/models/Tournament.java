@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tournament {
@@ -24,16 +25,32 @@ public class Tournament {
 	public List<Team> getTeams() {
 		return teams;
 	}
+	public List<String> getTeamsName() {
+		List<String> resp = new ArrayList<String>();
+		
+		for (Team team : teams) {
+			resp.add(team.getName());
+		}
+		return resp;
+	}
 
 	public void setTeams(List<Team> teams) {
 		this.teams = teams;
 	}
 
-	public List<Game> getGames() {
-		return games;
+	public List<Integer> getGamesId() {
+		List<Integer> resp = new ArrayList<Integer>();
+		
+		for (Game game : games) {
+			resp.add(game.getId());
+		}
+		return resp;
 	}
 
 	public void setGames(List<Game> games) {
 		this.games = games;
 	}	
+	public String toString(){
+		return "Name of Tournament: " + name + "\nTeams: " + teams + "\nGames: " + games; 
+	}
 }

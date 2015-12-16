@@ -3,6 +3,7 @@ package data;
 import org.bson.Document;
 
 import data.interfaces.IController;
+import data.interfaces.IRepository;
 import models.Player;
 import models.TeamGameStatistics ;
 import models.enums.Position;
@@ -33,7 +34,7 @@ public class PlayerController implements IController<Player> {
 	}
 
 	@Override
-	public Player convertToObject(Document doc) {
+	public Player convertToObject(Document doc, IRepository rep) {
 		Player player = new Player((String)doc.get("name"),
 				(String)doc.get("nickname"),
 				Position.valueOf((String)doc.get("position")),

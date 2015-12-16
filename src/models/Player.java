@@ -91,4 +91,9 @@ public class Player {
 	public double getKDA(){
 		return (this.kills+this.assists)/this.deaths;
 	}
+	
+	public String toString(){
+		return "Name:" + name + "\nNick: " + nickname + "\nPosition: " + position + "\nKills: " + kills + "\nDeaths: " + deaths + "\nAssists: " + assists + "\nKDA: " + getKDA() + "\nAge: " + age + "\nCountry: " + country;
+	}
+	
 }

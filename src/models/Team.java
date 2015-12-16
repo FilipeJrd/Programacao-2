@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
@@ -28,7 +29,18 @@ public class Team {
 	public List<Player> getPlayers() {
 		return players;
 	}
+	public List<String> getPlayersName() {
+		List<String> resp = new ArrayList<String>();
+		
+		for (Player player : players) {
+			resp.add(player.getName());
+		}
+		return resp;
+	}
 	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
-}
+	public String toString(){
+		return "Name of team: " + name + "\nCountry: " + country + "\nPlayers: " + players;
+	}
+	}

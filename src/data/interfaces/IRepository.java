@@ -20,10 +20,10 @@ public interface IRepository {
 	public void removeTeam();
 	public void removeTournament();
 	
-	public void findGame();
-	public void findPlayer();
-	public void findTeam();
-	public void findTournament();
+	public Game findGame(int id);
+	public Player findPlayer(String name);
+	public Team findTeam(String name);
+	public Tournament findTournament(String name);
 	
 	public void updateGame(Game game);
 	public void updatePlayer(Player player);

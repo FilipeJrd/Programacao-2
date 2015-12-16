@@ -3,6 +3,7 @@ package data;
 import org.bson.Document;
 
 import data.interfaces.IController;
+import data.interfaces.IRepository;
 import models.TeamGameStatistics;
 
 public class TeamGameStatisticsController implements IController<TeamGameStatistics>{
@@ -25,7 +26,7 @@ public class TeamGameStatisticsController implements IController<TeamGameStatist
 	}
 
 	@Override
-	public TeamGameStatistics convertToObject(Document doc) {
+	public TeamGameStatistics convertToObject(Document doc, IRepository rep) {
 		return new TeamGameStatistics(
 				(int)doc.get("gold"),
 				(int)doc.get("kills"),

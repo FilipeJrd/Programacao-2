@@ -5,16 +5,21 @@ public class Game {
 	private Team dire;
 	private TeamGameStatistics radiantStats;
 	private TeamGameStatistics direStats;
+	private int id;
 	
 	
-	public Game(String winner, Team radiant, Team dire, TeamGameStatistics radiantStats, TeamGameStatistics direStats) {
+	public Game(String winner, Team radiant, Team dire, TeamGameStatistics radiantStats, TeamGameStatistics direStats, int id) {
 		this.winner = winner;
 		this.radiant = radiant;
 		this.dire = dire;
 		this.radiantStats = radiantStats;
 		this.direStats = direStats;
+		this.id = id;
 	}
 	
+	public int getId(){
+		return this.id;
+	}
 	public String getWinner() {
 		return winner;
 	}
@@ -45,6 +50,10 @@ public class Game {
 	public void setDireStats(TeamGameStatistics direStats) {
 		this.direStats = direStats;
 	}
+	public String toString(){
+		return "Winner: " + winner + "\n Team Radiant:" + radiant + "\n" +radiantStats + "\n Team Dire:" + dire + "\n" + direStats;
+		}
+
 	
 	
 
