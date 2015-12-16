@@ -11,7 +11,7 @@ public aspect ErrorHandlingAspect {
 		try {
 			proceed();
 		} catch(InputMismatchException e) {
-			System.out.println("Opção inválida!");
+			System.out.println("Opï¿½ï¿½o invï¿½lida!");
 			System.out.println();
 			Main.main(new String[0]);
 		}

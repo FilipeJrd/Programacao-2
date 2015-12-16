@@ -4,7 +4,7 @@ import org.bson.Document;
 import data.interfaces.*;
 import models.TeamGameStatistics;
 
-public class TeamGameStatisticsController implements IModelController<TeamGameStatistics>{
+public class TeamGameStatisticsController{
 	
 	@Override
 	public Document convertToDocument(TeamGameStatistics obj) {

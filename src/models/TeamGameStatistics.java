@@ -70,9 +70,5 @@ public class TeamGameStatistics {
 	public void setBans(String bans) {
 		this.bans = bans;
 	}
-	
-	public String toString(){
-		return "Gold: " + gold + "\nKills: " + kills + "\nTowers Destroyed: " + towersDestroyed + "\nBarracks Destroyed" + barracksDestroyed + "\nRoshan Kills: "+ roshanKills + "\nAegis Taken: " + aegis + "\nPicks: " + picks + "\nBans: "+ bans; 
-	}
 
 }

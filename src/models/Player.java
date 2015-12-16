@@ -34,8 +34,4 @@ public class Player {
 		this.position = position;
 	}	
 	
-	public String toString(){
-		return "Nome: " + name + "\nNick: " + nickname + "\nPosição: " + position;
-	}
-	
 }

@@ -4,7 +4,7 @@ import org.bson.Document;
 import data.interfaces.*;
 import models.Player;
 
-public class PlayerController implements IModelController<Player> {
+public class PlayerController{
 	
 	@Override
 	public Document convertToDocument(Player obj) {

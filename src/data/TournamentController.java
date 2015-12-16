@@ -8,7 +8,7 @@ import models.Game;
 import models.Team;
 import models.Tournament;
 
-public class TournamentController implements IModelController<Tournament>{
+public class TournamentController{
 
 	@Override
 	public Document convertToDocument(Tournament obj) {

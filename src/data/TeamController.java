@@ -7,7 +7,7 @@ import data.interfaces.*;
 import models.Player;
 import models.Team;
 
-public class TeamController implements IModelController<Team>{
+public class TeamController{
 	
 	@Override
 	public Document convertToDocument(Team obj) {

@@ -50,8 +50,6 @@ public class Game {
 		this.direPicks = direPicks;
 	}
 	
-	public String toString(){
-		return "Match ID: " + id + "\nVencedor: " + winner + "\n\nRadiant:\n" + radiant + "\nPicks: " +radiantPicks + "\n\nDire:\n" + dire + "\nPicks: " + direPicks;
-	}
+	
 	
 }

@@ -4,7 +4,7 @@ import org.bson.Document;
 import data.interfaces.*;
 import models.Game;
 
-public class GameController implements IModelController<Game>{
+public class GameController{
 	
 	private static final String winnerKey = "winner";
 	private static final String direKey = "dire";
@@ -12,7 +12,7 @@ public class GameController implements IModelController<Game>{
 	private static final String radiantPicksKey = "radiantPicks";
 	private static final String direPicksKey = "direPicks";
 	private static final String idKey = "id";
-	
+
 	@Override
 	public Document convertToDocument(Game obj) {
 		Game game = (Game) obj;

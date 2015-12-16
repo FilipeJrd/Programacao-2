@@ -49,8 +49,11 @@ public class Tournament {
 
 	public void setGames(List<Game> games) {
 		this.games = games;
-	}	
-	public String toString(){
-		return "Name of Tournament: " + name + "\nTeams: " + teams + "\nGames: " + games; 
 	}
+
+	public List<Game> getGames() {
+		return games;
+	}
+	
+	
 }

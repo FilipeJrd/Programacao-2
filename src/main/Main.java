@@ -2,6 +2,9 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import data.DefaultRepositoryController;
 import models.Game;
 import models.Player;
@@ -15,6 +18,9 @@ public class Main {
 	private static DefaultRepositoryController repController;
 
 	public static void main(String[] args) {
+		Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
+		mongoLogger.setLevel(Level.SEVERE); 
+		
 		intScanner = new Scanner(System.in);
 		stringScanner = new Scanner(System.in);
 		repController = DefaultRepositoryController.getInstance();
@@ -41,7 +47,7 @@ public class Main {
 					System.out.println("GGWP!");
 					break;
 				default:
-					System.out.println("Opção inválida!");			
+					System.out.println("Opï¿½ï¿½o invï¿½lida!");			
 			}			
 		
 		} while (input != 9);	
@@ -121,7 +127,7 @@ public class Main {
 	}
 	
 	private static void insertGame() {
-		System.out.println("Por favor, informar as informações da partida.");
+		System.out.println("Por favor, informar as informaï¿½ï¿½es da partida.");
 		
 		System.out.println("Id:");
 		int id = intScanner.nextInt();
@@ -149,12 +155,12 @@ public class Main {
 	}
 	
 	private static void insertTeam() {
-		System.out.println("Por favor, informar as informações do time.");
+		System.out.println("Por favor, informar as informaï¿½ï¿½es do time.");
 		
 		System.out.println("Nome: ");
 		String name = stringScanner.nextLine();
 		
-		System.out.println("País: ");
+		System.out.println("Paï¿½s: ");
 		String country = stringScanner.nextLine();
 		
 		ArrayList<Player> players = new ArrayList<Player>();
@@ -168,13 +174,11 @@ public class Main {
 		
 		Team team = new Team(name, country, players);
 		
-		System.out.println("Cadastrando time...");
 		repController.insertTeam(team);
-		System.out.println("Time cadastrado!");
 	}
 	
 	private static void insertPlayer() {
-		System.out.println("Por favor, informar as informações do jogador.");
+		System.out.println("Por favor, informar as informaï¿½ï¿½es do jogador.");
 		
 		System.out.println("Nome: ");
 		String name = stringScanner.nextLine();
@@ -182,14 +186,12 @@ public class Main {
 		System.out.println("Nickname: ");
 		String nickname = stringScanner.nextLine();
 		
-		System.out.println("Posição: ");
+		System.out.println("Posiï¿½ï¿½o: ");
 		String position = stringScanner.nextLine();
 		
 		Player player = new Player(name, nickname, position);
-		
-		System.out.println("Cadastrando jogador...");		
-		repController.insertPlayer(player);				
-		System.out.println("Jogador cadastrado!"); 
+			
+		repController.insertPlayer(player);				 
 	}
 	
 }
