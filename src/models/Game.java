@@ -3,17 +3,16 @@ public class Game {
 	private String winner;
 	private Team radiant;
 	private Team dire;
-	private TeamGameStatistics radiantStats;
-	private TeamGameStatistics direStats;
-	private int id;
+	private String radiantPicks;
+	private String direPicks;
+	private int id;	
 	
-	
-	public Game(String winner, Team radiant, Team dire, TeamGameStatistics radiantStats, TeamGameStatistics direStats, int id) {
+	public Game(int id, String winner, Team radiant, Team dire, String radiantPicks, String direPicks) {
 		this.winner = winner;
 		this.radiant = radiant;
 		this.dire = dire;
-		this.radiantStats = radiantStats;
-		this.direStats = direStats;
+		this.radiantPicks = radiantPicks;
+		this.direPicks = direPicks;
 		this.id = id;
 	}
 	
@@ -38,24 +37,21 @@ public class Game {
 	public void setDire(Team dire) {
 		this.dire = dire;
 	}
-	public TeamGameStatistics getRadiantStats() {
-		return radiantStats;
+	public String getRadiantPicks() {
+		return this.radiantPicks;
 	}
-	public void setRadiantStats(TeamGameStatistics radiantStats) {
-		this.radiantStats = radiantStats;
+	public void setRadiantPicks(String radiantPicks) {
+		this.radiantPicks = radiantPicks;
 	}
-	public TeamGameStatistics getDireStats() {
-		return direStats;
+	public String getDirePicks() {
+		return this.direPicks;
 	}
-	public void setDireStats(TeamGameStatistics direStats) {
-		this.direStats = direStats;
+	public void setDirePicks(String direPicks) {
+		this.direPicks = direPicks;
 	}
+	
 	public String toString(){
-		return "Winner: " + winner + "\n Team Radiant:" + radiant + "\n" +radiantStats + "\n Team Dire:" + dire + "\n" + direStats;
-		}
-
-	
-	
-
+		return "Match ID: " + id + "\nVencedor: " + winner + "\n\nRadiant:\n" + radiant + "\nPicks: " +radiantPicks + "\n\nDire:\n" + dire + "\nPicks: " + direPicks;
+	}
 	
 }

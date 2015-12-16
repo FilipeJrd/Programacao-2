@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
+	
 	private String name;
 	private String country;
-	private List<Player> players;
-	
+	private List<Player> players;	
 	
 	public Team(String name, String country, List<Player> players) {
 		this.name = name;
@@ -41,6 +41,15 @@ public class Team {
 		this.players = players;
 	}
 	public String toString(){
-		return "Name of team: " + name + "\nCountry: " + country + "\nPlayers: " + players;
+		String linebreak = "\n";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Time: " + this.name + linebreak);
+		builder.append("País: " + this.country + linebreak);
+		for (int i = 0; i < players.size(); ++i) {
+			builder.append("\nJogador " + (i+1) + linebreak + players.get(i).toString() + linebreak);
+		}
+		
+		return builder.toString();
 	}
-	}
+	
+}

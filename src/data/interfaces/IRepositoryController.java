@@ -5,10 +5,7 @@ import models.Player;
 import models.Team;
 import models.Tournament;
 
-public interface IRepository {
-	
-	public void save();
-	public void load();
+public interface IRepositoryController {
 	
 	public void insertGame(Game game);
 	public void insertPlayer(Player player);

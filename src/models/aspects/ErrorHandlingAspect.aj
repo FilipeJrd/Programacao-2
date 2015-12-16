@@ -1,19 +1,19 @@
 package models.aspects;
 
+import java.util.InputMismatchException;
 import main.Main;
 
 public aspect ErrorHandlingAspect {
 
-	pointcut inputValidator(): execution(void Main.readInput(..));
-	
-	pointcut inputValidator2(): execution(int java.util.Scanner.nextInt());
-	
+	pointcut inputValidator(): execution(void Main.*());
+		
 	void around(): inputValidator() {
 		try {
 			proceed();
-		} catch(Exception e) {
-			System.out.println(e);
-			Main.readInput();
+		} catch(InputMismatchException e) {
+			System.out.println("Opção inválida!");
+			System.out.println();
+			Main.main(new String[0]);
 		}
 	}
 	

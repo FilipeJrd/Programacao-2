@@ -2,16 +2,13 @@ package data;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bson.Document;
-
-import data.interfaces.IController;
-import data.interfaces.IRepository;
+import data.interfaces.*;
 import models.Game;
 import models.Team;
 import models.Tournament;
 
-public class TournamentController implements IController<Tournament>{
+public class TournamentController implements IModelController<Tournament>{
 
 	@Override
 	public Document convertToDocument(Tournament obj) {
@@ -22,8 +19,9 @@ public class TournamentController implements IController<Tournament>{
 		return doc;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Tournament convertToObject(Document doc, IRepository rep) {
+	public Tournament convertToObject(Document doc, IRepositoryController rep) {
 		List<Team> t =  new ArrayList<Team>();
 		for (String name : (List<String>)doc.get("teams")) {
 			t.add(rep.findTeam(name));
