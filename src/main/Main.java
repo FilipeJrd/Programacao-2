@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import data.DefaultRepositoryController;
+import exceptions.ItemNotFoundException;
 import models.Game;
 import models.Player;
 import models.Team;
@@ -47,7 +48,7 @@ public class Main {
 					System.out.println("GGWP!");
 					break;
 				default:
-					System.out.println("Op��o inv�lida!");			
+					System.out.println("Opcao invalida!");			
 			}			
 		
 		} while (input != 9);	
@@ -127,7 +128,7 @@ public class Main {
 	}
 	
 	private static void insertGame() {
-		System.out.println("Por favor, informar as informa��es da partida.");
+		System.out.println("Por favor, informar as informacoes da partida.");
 		
 		System.out.println("Id:");
 		int id = intScanner.nextInt();
@@ -155,12 +156,12 @@ public class Main {
 	}
 	
 	private static void insertTeam() {
-		System.out.println("Por favor, informar as informa��es do time.");
+		System.out.println("Por favor, informar as informacoes do time.");
 		
 		System.out.println("Nome: ");
 		String name = stringScanner.nextLine();
 		
-		System.out.println("Pa�s: ");
+		System.out.println("Pais: ");
 		String country = stringScanner.nextLine();
 		
 		ArrayList<Player> players = new ArrayList<Player>();
@@ -178,7 +179,7 @@ public class Main {
 	}
 	
 	private static void insertPlayer() {
-		System.out.println("Por favor, informar as informa��es do jogador.");
+		System.out.println("Por favor, informar as informacoes do jogador.");
 		
 		System.out.println("Nome: ");
 		String name = stringScanner.nextLine();
@@ -186,7 +187,7 @@ public class Main {
 		System.out.println("Nickname: ");
 		String nickname = stringScanner.nextLine();
 		
-		System.out.println("Posi��o: ");
+		System.out.println("Posicao: ");
 		String position = stringScanner.nextLine();
 		
 		Player player = new Player(name, nickname, position);

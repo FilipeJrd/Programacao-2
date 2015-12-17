@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
 import data.interfaces.*;
+import exceptions.ItemNotFoundException;
 import models.Player;
 import models.Team;
 
 public class TeamController{
 	
-	@Override
 	public Document convertToDocument(Team obj) {
 		Document doc = new Document();
 		doc.append("country", obj.getCountry());
@@ -19,12 +19,13 @@ public class TeamController{
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public Team convertToObject(Document doc, IRepositoryController rep) {
 		List<Player> players =  new ArrayList<Player>();
+		
 		for (String player : (List<String>) doc.get("players")) {
 			players.add(rep.findPlayer(player));
 		}
+		
 		return new Team(doc.getString("name"), doc.getString("country"), players) ;
 	}
 

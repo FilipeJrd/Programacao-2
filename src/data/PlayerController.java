@@ -20,9 +20,9 @@ public class PlayerController{
 
 	@Override
 	public Player convertToObject(Document doc, IRepositoryController rep) {
-		Player player = new Player((String)doc.get("name"),
-				(String)doc.get("nickname"),
-				(String)doc.get("position"));
+		Player player = new Player(doc.getString("name"),
+				doc.getString("nickname"),
+				doc.getString("position"));
 		
 		return player;
 	}

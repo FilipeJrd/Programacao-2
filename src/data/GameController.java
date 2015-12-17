@@ -13,7 +13,6 @@ public class GameController{
 	private static final String direPicksKey = "direPicks";
 	private static final String idKey = "id";
 
-	@Override
 	public Document convertToDocument(Game obj) {
 		Game game = (Game) obj;
 		Document doc =  new Document();
@@ -26,15 +25,15 @@ public class GameController{
 		
 		return doc;
 	}
-	@Override
+	
 	public Game convertToObject(Document doc, IRepositoryController teamRep) {		
-		return new Game(
-				(int)doc.get(idKey),
-				(String)doc.get(winnerKey),
-				teamRep.findTeam((String)doc.get(radiantKey)),
-				teamRep.findTeam((String)doc.get(direKey)),
-				doc.getString(radiantPicksKey),
-				doc.getString(direPicksKey));
+			return new Game(
+					doc.getInteger(idKey),
+					doc.getString(winnerKey),
+					teamRep.findTeam((String)doc.get(radiantKey)),
+					teamRep.findTeam((String)doc.get(direKey)),
+					doc.getString(radiantPicksKey),
+					doc.getString(direPicksKey));
 	}
 	
 }

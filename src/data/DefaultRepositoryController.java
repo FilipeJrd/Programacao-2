@@ -5,10 +5,10 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
 import data.interfaces.IRepositoryController;
+import exceptions.ItemNotFoundException;
 import models.Game;
 import models.Player;
 import models.Team;
-import models.Tournament;
 
 public class DefaultRepositoryController implements IRepositoryController {
 	
@@ -52,75 +52,33 @@ public class DefaultRepositoryController implements IRepositoryController {
 	}
 
 	@Override
-	public void insertTournament(Tournament tournament) {
-		TournamentController tc = new TournamentController();
-		
-		Document doc = tc.convertToDocument(tournament);
-		this.db.getCollection("tournaments").insertOne(doc);
-	}
-
-	@Override
-	public void removeGame() {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public void removePlayer() {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public void removeTeam() {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public void removeTournament() {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public Game findGame(int id) {
+	public Game findGame(int id) throws ItemNotFoundException {
 		GameController controller = new GameController();
-		return controller.convertToObject(this.db.getCollection("games").find(new Document("id",id)).first(), this);
+		Document gameDocument = this.db.getCollection("games").find(new Document("id",id)).first();
+		if (gameDocument == null)
+			throw new ItemNotFoundException("Não foi possível encontrar a partida");
+		
+		return controller.convertToObject(gameDocument, this);
 	}
 
 	@Override
-	public Player findPlayer(String name) {
+	public Player findPlayer(String name) throws ItemNotFoundException {
 		PlayerController controller = new PlayerController();
-		return controller.convertToObject(this.db.getCollection("players").find(new Document("name",name)).first(), this);
+		Document playerDocument = this.db.getCollection("players").find(new Document("name",name)).first();
+		if (playerDocument == null)
+			throw new ItemNotFoundException("Não foi possível encontrar o jogador");
+		
+		return controller.convertToObject(playerDocument, this);
 	}
 
 	@Override
-	public Team findTeam(String name) {
+	public Team findTeam(String name) throws ItemNotFoundException {
 		TeamController controller = new TeamController();
-		return controller.convertToObject(this.db.getCollection("teams").find(new Document("name",name)).first(), this);
-	}
-
-	@Override
-	public Tournament findTournament(String name) {
-		TournamentController controller = new TournamentController();
-		return controller.convertToObject(this.db.getCollection("tournaments").find(new Document("name",name)).first(), this);
-	}
-
-	@Override
-	public void updateGame(Game game) {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public void updatePlayer(Player player) {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public void updateTeam(Team team) {
-		// TODO Auto-generated method stub		
-	}
-
-	@Override
-	public void updateTournament(Tournament tournament) {
-		// TODO Auto-generated method stub		
-	}
+		Document teamDocument = this.db.getCollection("teams").find(new Document("name",name)).first();
+		if (teamDocument == null)
+			throw new ItemNotFoundException("Não foi possível encontrar o time");
+		
+		return controller.convertToObject(teamDocument, this);
+	}	
 
 }
